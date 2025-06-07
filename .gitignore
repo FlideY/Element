@@ -76,3 +76,4 @@ crashlytics-build.properties
 *.meta
 /Element/Logs
 /Element/Assets/Plugins
+/Element/.utmp

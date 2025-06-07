@@ -13,7 +13,7 @@ public class CircleEnemy : Enemy
     void Update()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        if (distanceToPlayer < 20) fsm.SetState<CircleEnemyFollow>();
+        if (distanceToPlayer < 35) fsm.SetState<CircleEnemyFollow>();
         else fsm.SetState<CircleEnemyIdle>();
         fsm.Update();
     }
