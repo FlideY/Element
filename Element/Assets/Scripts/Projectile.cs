@@ -2,20 +2,18 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    Boss _boss;
     public Rigidbody2D Rb2D;
-    Transform _boss;
     float _timer;
     float _deleteTime = 20;
     void Start()
     {
-        _boss = GameObject.Find("Boss").transform;
-        transform.position = _boss.position;
+        _boss = GameObject.FindFirstObjectByType<Boss>();
     }
     void OnEnable()
     {
-        Rb2D = GetComponent<Rigidbody2D>();
         _timer = _deleteTime;
-        transform.position = _boss.position;
+        transform.position = _boss.transform.position;
     }
 
     void OnTriggerEnter2D(Collider2D other)

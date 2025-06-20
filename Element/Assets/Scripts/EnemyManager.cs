@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
     public static EventHandler Handler;
 
     [SerializeField] Room _room;
+    [SerializeField] Transform _parent;
     [SerializeField] Enemy _enemyPrefab;
     [SerializeField] Transform[] _spawnPositions;
 
@@ -15,7 +16,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         Handler = OnEnterNormalRoom;
-        _enemyPool = new CustomPool<Enemy>(_enemyPrefab, transform);
+        _enemyPool = new CustomPool<Enemy>(_enemyPrefab, _parent);
     }
     void OnEnterNormalRoom()
     {

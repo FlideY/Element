@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6372825844603489735}
   - component: {fileID: 4639808423520916721}
   m_Layer: 9
-  m_Name: "\u041F\u0443\u043B\u044F"
+  m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,4 +165,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5af1f96b5b4fdf40acb836711e57814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rb2D: {fileID: 0}
+  Rb2D: {fileID: 1993284993478724333}
+  _boss: {fileID: 6612158908070262709, guid: 0ed32606d80a9f246b7b36ba78be2d9b, type: 3}

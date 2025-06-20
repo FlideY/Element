@@ -1,10 +1,9 @@
 using UnityEngine;
 using CustomPool;
-using Unity.Hierarchy;
 
 public class Boss : Enemy
 {
-    [SerializeField] Transform _parent;
+    Transform _parent;
     Transform _player;
     [SerializeField] Projectile _projectilePrefab;
     CustomPool<Projectile> _projectiles;
@@ -13,6 +12,7 @@ public class Boss : Enemy
     void Start()
     {
         _player = GameObject.Find("Player").transform;
+        _parent = GameObject.Find("Projectiles").transform;
         _projectiles = new CustomPool<Projectile>(_projectilePrefab, _parent);
         _timer = _coolDown;
     }

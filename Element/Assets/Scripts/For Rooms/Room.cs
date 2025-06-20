@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 public class Room : MonoBehaviour
 {
@@ -23,17 +24,13 @@ public class Room : MonoBehaviour
     [Header("Text")]
     [SerializeField] GameObject Text;
 
-    [SerializeField] EnemyManager _enemyManager;
-    [SerializeField] BossManager _bossManager;
-
     SpriteRenderer _spriteRenderer;
-    EnvironmentManager _environmentManager;
+    [Inject] EnvironmentManager _environmentManager;
     [HideInInspector] public RoomData RoomData;
 
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
     }
     public void Build()
     {

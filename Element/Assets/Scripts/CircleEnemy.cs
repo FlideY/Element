@@ -47,7 +47,7 @@ public class CircleEnemy : Enemy
 
     void OnEnable()
     {
-        _health = 5;
+        _health = 1;
     }
     void OnDisable()
     {
