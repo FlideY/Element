@@ -4,7 +4,7 @@ using Zenject;
 
 public class BossManager : MonoBehaviour
 {
-    [SerializeField] Room _room;
+    [Inject] Room _room;
     [SerializeField] Transform _parent;
     public delegate void EventHandler();
     public static EventHandler Handler;

@@ -1,9 +1,10 @@
 using UnityEngine;
+using Zenject;
 
 public class WeaponComponent : MonoBehaviour
 {
     [SerializeField] PlayerData _playerData;
-    EraserManager _eraserManager;
+    [Inject] EraserManager _eraserManager;
 
     float _coolDown = 0.25f;
     float _timer;
@@ -11,7 +12,6 @@ public class WeaponComponent : MonoBehaviour
     void Start()
     {
         _timer = _coolDown;
-        _eraserManager = GameObject.Find("EraserManager").GetComponent<EraserManager>();
     }
     void Update()
     {

@@ -4,17 +4,22 @@ using CustomPool;
 public class Boss : Enemy
 {
     Transform _parent;
-    Transform _player;
+    //Transform _player;
     [SerializeField] Projectile _projectilePrefab;
     CustomPool<Projectile> _projectiles;
     float _timer;
     float _coolDown = 4;
     void Start()
     {
-        _player = GameObject.Find("Player").transform;
+        //_player = GameObject.Find("Player").transform;
         _parent = GameObject.Find("Projectiles").transform;
         _projectiles = new CustomPool<Projectile>(_projectilePrefab, _parent);
         _timer = _coolDown;
+    }
+
+    void OnEnable()
+    {
+        _health = 100;
     }
 
     void Update()
@@ -25,6 +30,25 @@ public class Boss : Enemy
             _timer = _coolDown;
         }
         else _timer -= Time.deltaTime;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag is "Eraser")
+        {
+            Debug.Log($"Hit, {_health}");
+            other.gameObject.SetActive(false);
+            TakeDamage(-1);
+        }
+    }
+
+    void TakeDamage(int damage)
+    {
+        _health += damage;
+        if (_health <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     void Attack()
