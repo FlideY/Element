@@ -48,7 +48,7 @@ public class RoomManager : MonoBehaviour
                 RoomData nRoomData = ScriptableObject.CreateInstance<RoomData>();
                 nRoomData.RoomIndex = room.Key;
                 nRoomData.Tag = room.Value;
-                nRoomData.EnvironmentIndex = Random.Range(0, 3);
+                nRoomData.EnvironmentIndex = Random.Range(1, 4);
                 _roomDatas.Add(room.Key, nRoomData);
                 return;
             case "Boss":
