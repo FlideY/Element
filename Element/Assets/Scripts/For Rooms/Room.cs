@@ -24,6 +24,8 @@ public class Room : MonoBehaviour
     [Header("Text")]
     [SerializeField] GameObject Text;
 
+    public string StartText;
+    public string BossText;
     SpriteRenderer _spriteRenderer;
     [Inject] EnvironmentManager _environmentManager;
     [HideInInspector] public RoomData RoomData;
@@ -65,14 +67,14 @@ public class Room : MonoBehaviour
         {
             case "Start":
                 Text.SetActive(true);
-                Text.GetComponent<TextMeshPro>().text = "Модуль №1";
+                Text.GetComponent<TextMeshPro>().text = StartText;
                 break;
             case "Normal":
                 Text.SetActive(false);
                 break;
             case "Boss":
                 Text.SetActive(true);
-                Text.GetComponent<TextMeshPro>().text = "РK №1";
+                Text.GetComponent<TextMeshPro>().text = BossText;
                 break;
         }
     }

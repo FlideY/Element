@@ -4,10 +4,11 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     Room _room;
-    [SerializeField] Dictionary<Vector2Int, RoomData> _roomDatas = new();
+    [SerializeField] Dictionary<Vector2Int, RoomData> _roomDatas;
 
     void Awake()
     {
+        _roomDatas = new();
         _room = GameObject.Find("Room").GetComponent<Room>();
     }
 

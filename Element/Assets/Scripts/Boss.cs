@@ -3,12 +3,14 @@ using CustomPool;
 
 public class Boss : Enemy
 {
+    BossManager _bossManager;
     Transform _parent;
     //Transform _player;
     [SerializeField] Projectile _projectilePrefab;
     CustomPool<Projectile> _projectiles;
     float _timer;
     float _coolDown = 4;
+    int _maxHealth = 10;
     void Start()
     {
         //_player = GameObject.Find("Player").transform;
@@ -19,7 +21,8 @@ public class Boss : Enemy
 
     void OnEnable()
     {
-        _health = 100;
+        _health = _maxHealth;
+        _bossManager = GameObject.Find("BossManager").GetComponent<BossManager>();
     }
 
     void Update()
@@ -36,7 +39,6 @@ public class Boss : Enemy
     {
         if (other.tag is "Eraser")
         {
-            Debug.Log($"Hit, {_health}");
             other.gameObject.SetActive(false);
             TakeDamage(-1);
         }
@@ -45,9 +47,11 @@ public class Boss : Enemy
     void TakeDamage(int damage)
     {
         _health += damage;
+        _bossManager.UIManager.ChangeBossHealth((float)_health / _maxHealth);
         if (_health <= 0)
         {
             gameObject.SetActive(false);
+            BossManager.Handler();
         }
     }
 

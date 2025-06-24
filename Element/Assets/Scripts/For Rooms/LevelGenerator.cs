@@ -15,11 +15,12 @@ public class LevelGenerator : MonoBehaviour
 
     public static bool GenerationComplete = false;
     public static int[,] RoomGrid = new int[5, 5];
-    public static Dictionary<Vector2Int, string> FormalRooms = new();
+    public static Dictionary<Vector2Int, string> FormalRooms;
     public static Vector2Int StartRoomIndex = new(2, 2);
 
     void Start()
     {
+        FormalRooms = new();
         StartRoomGenerationFromRoom(StartRoomIndex);
         do { Generate(); }
         while (!GenerationComplete);
