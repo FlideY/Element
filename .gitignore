@@ -6,7 +6,7 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
-/[Bb]uilds/*
+/[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
@@ -77,3 +77,4 @@ crashlytics-build.properties
 /Element/Logs
 /Element/Assets/Plugins
 /Element/.utmp
+/Element/Builds
