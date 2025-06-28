@@ -15,10 +15,11 @@ public class Projectile : MonoBehaviour
         transform.position = _boss.position; 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.tag is "Player" ||  other.tag is "Environment" ||
-        other.tag is "TopDoor" || other.tag is "LeftDoor" || other.tag is "RightDoor" || other.tag is "BottomDoor")
+        if (other.gameObject.tag is "Player" ||  other.gameObject.tag is "Environment" ||
+        other.gameObject.tag is "TopDoor" || other.gameObject.tag is "LeftDoor" ||
+        other.gameObject.tag is "RightDoor" || other.gameObject.tag is "BottomDoor")
         {
             gameObject.SetActive(false);
         }

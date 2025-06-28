@@ -1,6 +1,6 @@
 using UnityEngine;
 using CustomPool;
-using Unity.VisualScripting;
+using Zenject;
 
 public class EraserManager : MonoBehaviour
 {
@@ -8,11 +8,10 @@ public class EraserManager : MonoBehaviour
     [SerializeField] Eraser _prefabEraser;
     [SerializeField] Transform _player;
     [SerializeField] LayerMask _enemyLayer;
-    MovingComponent _movingComponent;
+    [Inject] MovingComponent _movingComponent;
 
     void Start()
     {
-        _movingComponent = GameObject.Find("Player").GetComponent<MovingComponent>();
         _erasers = new CustomPool<Eraser>(_prefabEraser, _player);
     }
 

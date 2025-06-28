@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
     public GameObject NextLevelButton;
     public TextMeshProUGUI _nextLevelButttonText;
 
+    [Header("Player")]
+    [SerializeField] RectTransform _playerHealthBar;
+
     CustomPool<RoomUI> _roomsOnMiniMap;
     void Awake()
     {
@@ -35,8 +38,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ChangeBossHealth(float _healthPercant)
+    public void ChangeBossHealth(float healthPercant)
     {
-        _bossHealthBar.sizeDelta = new Vector2(1000 * _healthPercant, _bossHealthBar.sizeDelta.y);
+        _bossHealthBar.sizeDelta = new Vector2(1000 * healthPercant, _bossHealthBar.sizeDelta.y);
+    }
+
+    public void ChangePlayerHealth(float healthPercant)
+    {
+        _playerHealthBar.sizeDelta = new Vector2(140 * healthPercant, _playerHealthBar.sizeDelta.y);
     }
 }

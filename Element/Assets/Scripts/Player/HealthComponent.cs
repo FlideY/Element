@@ -1,13 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using Zenject;
 public class HealthComponent : MonoBehaviour
 {
     [SerializeField] PlayerData _playerData;
+    [Inject] UIManager uIManager;
     public int CurrentHealth { get; private set; }
-
 
     bool _isInvincible;
     float _damageCooldown;
-
 
     void Start()
     {
@@ -23,7 +24,15 @@ public class HealthComponent : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag is "Bullet")
+        {
+            ChangeHealth(-1);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag is "Enemy")
         {
@@ -40,7 +49,14 @@ public class HealthComponent : MonoBehaviour
             _damageCooldown = 2;
         }
         CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, _playerData.MaxHealth);
+        uIManager.ChangePlayerHealth((float)CurrentHealth / _playerData.MaxHealth);
 
-        if (CurrentHealth <= 0) GameManager.Handler();
+        Debug.Log($"CurrentHealth: {CurrentHealth}");
+
+        if (CurrentHealth <= 0)
+        {
+            gameObject.SetActive(false);
+            GameManager.Handler();
+        }
     }
 }

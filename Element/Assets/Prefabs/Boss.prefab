@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4386225822990421799}
   m_Layer: 8
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c721eb9207052c4448796c7486264bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parent: {fileID: 3536383196416249879, guid: b3b417f65e511284d9d6dc8561dc4bc9, type: 3}
   _projectilePrefab: {fileID: 4639808423520916721, guid: 944bf86c1ea503345b4ac5689811d9d0, type: 3}
 --- !u!212 &250353711377950712
 SpriteRenderer:

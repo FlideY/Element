@@ -1,31 +1,40 @@
 using UnityEngine;
+using UnityEngine.AI;
 public class CircleEnemy : Enemy
 {
     Transform player;
+    NavMeshAgent agent;
+    Animator animator;
+
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
-        fsm.AddState(new CircleEnemyIdle(fsm));
-        fsm.AddState(new CircleEnemyFollow(fsm, player, transform));
-        fsm.SetState<CircleEnemyIdle>();
+        player = GameObject.Find("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        if (distanceToPlayer < 35) fsm.SetState<CircleEnemyFollow>();
-        else fsm.SetState<CircleEnemyIdle>();
-        fsm.Update();
+        float distance = Vector2.Distance(transform.position, player.position);
+        if (distance <= 25)
+        {
+            agent.SetDestination(player.position);
+            animator.SetFloat("Blend", 1.00f);
+            return;
+        }
+        else
+        {
+            animator.SetFloat("Blend", 0.00f);
+            return;
+        }
     }
 
-    void FixedUpdate()
-    {
-        fsm.FixedUpdate();
-    }
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, 20);
+        Gizmos.DrawWireSphere(transform.position, 25);
     }
 
     void OnTriggerEnter2D(Collider2D other)

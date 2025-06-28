@@ -15,4 +15,4 @@ MonoBehaviour:
   _maxSpeed: 20
   _acceleration: 15
   _deceleration: 10
-  _maxHealth: 5
+  _maxHealth: 10

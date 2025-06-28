@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [Inject] UIManager _uiManager;
     [Inject] Room _room;
 
+    bool isPaused;
+
     public delegate void EventHandler();
     public static EventHandler Handler;
 
@@ -42,12 +44,12 @@ public class GameManager : MonoBehaviour
         _uiManager._nextLevelButttonText.text = level.NextButtonLevelText;
         _room.StartText = level.StartText;
         _room.BossText = level.BossText;
-        Debug.Log("Level Initialized");
     }
 
     void OnPlayerDead()
     {
-        Debug.Log("PlayerDead");
+        SceneManager.LoadScene("PlayerDead", LoadSceneMode.Additive);
+        _levelCounter.ActiveLevel = 1;
     }
 
     public void NextLevel()
@@ -60,6 +62,12 @@ public class GameManager : MonoBehaviour
         }
         SceneManager.LoadScene("Level", LoadSceneMode.Single);
         _levelCounter.ActiveLevel++;
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        SceneManager.LoadScene("GamePause", LoadSceneMode.Additive);
     }
 
     void OnLevelChange(Scene arg0, LoadSceneMode arg1)
