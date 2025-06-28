@@ -1,0 +1,10 @@
+{
+  "obsidian-pandoc:pandoc-export-docx": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "W"
+    }
+  ]
+}

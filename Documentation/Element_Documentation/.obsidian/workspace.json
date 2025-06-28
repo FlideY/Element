@@ -1,0 +1,198 @@
+{
+  "main": {
+    "id": "3ec06e98b11bbbe5",
+    "type": "split",
+    "children": [
+      {
+        "id": "438da2ca1b8ceeff",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed6b92fc958fec0e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Общая документация/Game Design Document GDD.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Game Design Document GDD"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a85fef8f62122dad",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea6ac8ac8b5a2460",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f4e0bf19e6fa728",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "38777fc6cf2d3ae0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "79b4d415359a7b03",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "646c457b9ef9a993",
+    "type": "split",
+    "children": [
+      {
+        "id": "7c3832896d1e171f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cbcaf23e487941b2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Общая документация/Game Design Document GDD.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для Game Design Document GDD"
+            }
+          },
+          {
+            "id": "487a29ea8130d776",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Общая документация/Game Design Document GDD.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из Game Design Document GDD"
+            }
+          },
+          {
+            "id": "af8f51ba77fa4274",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "2671b017debe805d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Общая документация/Game Design Document GDD.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура Game Design Document GDD"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false
+    }
+  },
+  "active": "ed6b92fc958fec0e",
+  "lastOpenFiles": [
+    "Общая документация/Концепт-документ.md",
+    "Общая документация/Game Design Document GDD.md",
+    "Общая документация/files/UX_UIReference.canvas",
+    "Общая документация/files/Окружность.png",
+    "Общая документация/files/Пример_вопроса.png",
+    "Общая документация/files/MainMenu_IG.png",
+    "Общая документация/files/InGame_IG.png",
+    "Общая документация/files/PosPick МБ.png",
+    "Общая документация/files/ВинтEnemy.png",
+    "Общая документация/files/ГайкаEnemy.png",
+    "Общая документация/files/ПластинаEnemy.png",
+    "Общая документация/Technical Design Document TDD.md",
+    "Общая документация/План реализации RoadMap.md",
+    "files/Игровой цикл.pdf",
+    "Общая документация/files/GameLoop.jpg",
+    "[[Игровой.md",
+    "().md",
+    "Общая документация/files/ГОСТ_B.ttf",
+    "Общая документация/files/ГОСТ_A.ttf",
+    "Общая документация/files/GOST_A.ttf",
+    "Без названия.md",
+    "ГОСТ_A.ttf",
+    "ГОСТ_B.ttf",
+    "GOST_A.ttf"
+  ]
+}
