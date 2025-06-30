@@ -9,6 +9,7 @@ public class LevelSceneInstaller : MonoInstaller
     [SerializeField] EraserManager _eraserManager;
     [SerializeField] UIManager _uiManager;
     [SerializeField] MovingComponent _movingComponent;
+    [SerializeField] AudioManager _audioManager;
     public override void InstallBindings()
     {
         Container.Bind<Boss>().FromInstance(_bossPrefab);
@@ -17,5 +18,6 @@ public class LevelSceneInstaller : MonoInstaller
         Container.Bind<EraserManager>().FromInstance(_eraserManager);
         Container.Bind<UIManager>().FromInstance(_uiManager);
         Container.Bind<MovingComponent>().FromInstance(_movingComponent);
+        Container.Bind<AudioManager>().FromInstance(_audioManager);
     }
 }

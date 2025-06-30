@@ -5,6 +5,7 @@ using Zenject;
 public class BossManager : MonoBehaviour
 {
     [Inject] public UIManager UIManager;
+    [Inject] public AudioManager audioManager;
     [Inject] Room _room;
     [SerializeField] Transform _parent;
     public delegate void EventHandler();
@@ -22,10 +23,12 @@ public class BossManager : MonoBehaviour
     {
         if (!_room.RoomData.IsPassed)
         {
+            audioManager.PlayClip(audioManager.OnEnterBossRoom);
             Handler = OnBossKill;
             _room.CloseDoors();
             SpawnBoss();
             UIManager.BossPanel.SetActive(true);
+
         }
     }
 

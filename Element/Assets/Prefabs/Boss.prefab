@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectilePrefab: {fileID: 4639808423520916721, guid: 944bf86c1ea503345b4ac5689811d9d0, type: 3}
+  audioClip: {fileID: 8300000, guid: ba227b9ccb60f2b468e621bb5e5b919d, type: 3}
 --- !u!212 &250353711377950712
 SpriteRenderer:
   m_ObjectHideFlags: 0

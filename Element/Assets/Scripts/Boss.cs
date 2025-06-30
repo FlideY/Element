@@ -48,6 +48,15 @@ public class Boss : Enemy
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            _bossManager.audioManager.PlayClip(_bossManager.audioManager._bossCollision, 0.6f);
+        }
+    }
+
+
     void TakeDamage(int damage)
     {
         _health += damage;
@@ -61,19 +70,18 @@ public class Boss : Enemy
 
     IEnumerator CircleAttacking()
     {
-        Debug.Log("Start of coroutine");
-        _rb2D.linearVelocity = Vector2.zero;
+        Debug.Log("Start of CircleAttacking");
         yield return new WaitForSeconds(2);
         CircleAttack();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         _rb2D.linearVelocityX = 10;
         _rb2D.angularVelocity = 100;
         yield return new WaitForSeconds(1);
         _rb2D.linearVelocity = Vector2.zero;
         _rb2D.angularVelocity = 0;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         CircleAttack();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         _rb2D.linearVelocityX = -10;
         _rb2D.angularVelocity = -100;
         yield return new WaitForSeconds(1);
@@ -82,42 +90,33 @@ public class Boss : Enemy
 
         _isCoroutineEnd = true;
 
-        Debug.Log("End of coroutine");
+        Debug.Log("End of CircleAttacking");
     }
 
     IEnumerator DashingToPlayer()
     {
-        Debug.Log("Start of coroutine");
-
+        Debug.Log("Start of Dashing");
+        //_rb2D.angularVelocity = -100;
         yield return new WaitForSeconds(3);
         Vector2 direction;
         direction = _player.position - transform.position;
         direction = direction.normalized;
+        _rb2D.angularVelocity = 1000;
         _rb2D.AddForce(direction * 50, ForceMode2D.Impulse);
         yield return new WaitForSeconds(3);
         direction = _player.position - transform.position;
         direction = direction.normalized;
+        _rb2D.angularVelocity = 1000;
         _rb2D.AddForce(direction * 50, ForceMode2D.Impulse);
         yield return new WaitForSeconds(3);
         direction = _player.position - transform.position;
         direction = direction.normalized;
+        _rb2D.angularVelocity = 1000;
         _rb2D.AddForce(direction * 50, ForceMode2D.Impulse);
 
         _isCoroutineEnd = true;
 
-        Debug.Log("End of coroutine");
-    }
-
-    IEnumerator ChasingAndShooting()
-    { 
-        Debug.Log("Start of coroutine");
-
-        yield return new WaitForSeconds(3);
-        
-
-        _isCoroutineEnd = true;
-
-        Debug.Log("End of coroutine");
+        Debug.Log("End of Dashing");
     }
 
     void CircleAttack()

@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class RoomManager : MonoBehaviour
 {
     Room _room;
     [SerializeField] Dictionary<Vector2Int, RoomData> _roomDatas;
+    [Inject] AudioManager audioManager;
+    [Inject] MovingComponent movingComponent;
 
     void Awake()
     {
@@ -29,6 +32,7 @@ public class RoomManager : MonoBehaviour
         if (LevelGenerator.RoomGrid[_room.RoomData.RoomIndex.x + direction.x, _room.RoomData.RoomIndex.y + direction.y] == 1)
         {
             _room.RoomData = _roomDatas[_room.RoomData.RoomIndex + direction];
+            audioManager.PlayRandomClip(audioManager._onSwitchRooms);
             _room.Build();
         }
     }

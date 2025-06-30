@@ -5,6 +5,7 @@ public class WeaponComponent : MonoBehaviour
 {
     [SerializeField] PlayerData _playerData;
     [Inject] EraserManager _eraserManager;
+    [Inject] AudioManager _audioManager;
 
     float _coolDown = 0.25f;
     float _timer;
@@ -23,6 +24,7 @@ public class WeaponComponent : MonoBehaviour
         if (_timer < 0)
         {
             _eraserManager.Hit();
+            _audioManager.PlayRandomClip(_audioManager._eraserThrows, 0.25f);
             _timer = _coolDown;
         } 
     }

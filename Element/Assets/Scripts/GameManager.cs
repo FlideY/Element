@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnLevelChange;
         Handler = OnPlayerDead;
 
+    }
+
+    void Start()
+    {
         switch (_levelCounter.ActiveLevel)
         {
             case 1:
@@ -54,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (_levelCounter.ActiveLevel == 3)
+        if (_levelCounter.ActiveLevel == 1)
         {
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
             _levelCounter.ActiveLevel = 1;
