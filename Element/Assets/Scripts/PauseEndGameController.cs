@@ -13,4 +13,14 @@ public class PauseEndGameController : MonoBehaviour
         SceneManager.UnloadSceneAsync("GamePause");
         Time.timeScale = 1f;
     }
+
+    public void Play()
+    {
+        SceneManager.LoadScene("Level");
+    }
+
+    public void Back()
+    {
+        SceneManager.UnloadSceneAsync("Levels");
+    }
 }

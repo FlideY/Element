@@ -24,6 +24,6 @@ public class MenuController : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Levels", LoadSceneMode.Additive);
     }
 }
