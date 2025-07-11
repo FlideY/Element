@@ -5,6 +5,7 @@ public class HealthComponent : MonoBehaviour
 {
     [SerializeField] PlayerData _playerData;
     [Inject] UIManager uIManager;
+    [Inject] AudioManager audioManager;
     public int CurrentHealth { get; private set; }
 
     bool _isInvincible;
@@ -49,6 +50,7 @@ public class HealthComponent : MonoBehaviour
             _damageCooldown = 2;
         }
         CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, _playerData.MaxHealth);
+        audioManager.PlayRandomClip(audioManager.GetHits, 0.6f);
         uIManager.ChangePlayerHealth((float)CurrentHealth / _playerData.MaxHealth);
 
         Debug.Log($"CurrentHealth: {CurrentHealth}");

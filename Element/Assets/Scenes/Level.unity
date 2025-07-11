@@ -1939,7 +1939,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: a67bd0d6e5a2d8b4e9f1838fae05eb11, type: 3}
+  m_Sprite: {fileID: -195504026128819935, guid: 445bba09af1185c46afca73b1feb6a83, type: 3}
   m_Color: {r: 0, g: 0.17218947, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2026,17 +2026,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.018561363, y: 0.009281158}
+  m_Offset: {x: 0.026495934, y: -1.4476109}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 4.11, y: 9.15}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.2250652, y: 2.6148586}
+  m_Size: {x: 2.1349506, y: 6.0693445}
   m_EdgeRadius: 0
 --- !u!114 &517402474
 MonoBehaviour:
@@ -3909,6 +3909,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3da2ed78f00c70f44a4862b2804d543f, type: 3}
   - {fileID: 8300000, guid: 785e148ec3f0cfc40b51308f0ed8eb94, type: 3}
   OnEnterBossRoom: {fileID: 8300000, guid: a622a29f6c2fa3b499340da20a9c6b32, type: 3}
+  GetHits:
+  - {fileID: 8300000, guid: e7cff9b2a55e8604aac109a5c1c067b9, type: 3}
+  - {fileID: 8300000, guid: 2fb71e0ca561d3442bc8417962de5b0c, type: 3}
 --- !u!82 &1181837398
 AudioSource:
   m_ObjectHideFlags: 0

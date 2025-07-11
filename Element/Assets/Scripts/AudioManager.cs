@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour, IPlayClips
 
     public AudioClip OnEnterBossRoom;
 
+    public AudioClip[] GetHits;
+
     AudioSource audioSource;
     void Start()
     {

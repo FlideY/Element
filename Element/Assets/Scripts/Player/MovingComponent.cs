@@ -7,19 +7,25 @@ public class MovingComponent : MonoBehaviour
     Vector2 _moveInput;
     public Vector2 LastInput { get; private set; }
     Rigidbody2D _rb2D;
+    SpriteRenderer spriteRenderer;
     void Start()
     {
         _rb2D = GetComponent<Rigidbody2D>();
-        LastInput = new Vector2(0, -1);
+        LastInput = new Vector2(1, -1);
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
         _moveInput.x = _joystick.Horizontal;
+
         _moveInput.y = _joystick.Vertical;
         if (_moveInput != Vector2.zero)
         {
             LastInput = _moveInput;
-        }   
+        }
+        if (_rb2D.linearVelocityX < 0) spriteRenderer.flipX = true;
+        else if (_rb2D.linearVelocityX > 0) spriteRenderer.flipX = false;
+        
     }
     void FixedUpdate() => Move();
     void Move()
