@@ -160,6 +160,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Создать новую базу": false,
       "switcher:Меню быстрого перехода": false,
       "graph:Граф": false,
       "canvas:Создать новый холст": false,
@@ -170,9 +171,14 @@
   },
   "active": "ed6b92fc958fec0e",
   "lastOpenFiles": [
-    "Общая документация/Концепт-документ.md",
+    "Общая документация/files/Screen Recording 2025-08-25 125012.mp4",
     "Общая документация/Game Design Document GDD.md",
+    "Общая документация/files/Screen Recording 2025-08-25 125816 1.mp4",
+    "Общая документация/files/Screen Recording 2025-08-25 125816.mp4",
+    "Общая документация/План реализации RoadMap.md",
     "Общая документация/files/UX_UIReference.canvas",
+    "Общая документация/Technical Design Document TDD.md",
+    "Общая документация/Концепт-документ.md",
     "Общая документация/files/Окружность.png",
     "Общая документация/files/Пример_вопроса.png",
     "Общая документация/files/MainMenu_IG.png",
@@ -181,8 +187,6 @@
     "Общая документация/files/ВинтEnemy.png",
     "Общая документация/files/ГайкаEnemy.png",
     "Общая документация/files/ПластинаEnemy.png",
-    "Общая документация/Technical Design Document TDD.md",
-    "Общая документация/План реализации RoadMap.md",
     "files/Игровой цикл.pdf",
     "Общая документация/files/GameLoop.jpg",
     "[[Игровой.md",
