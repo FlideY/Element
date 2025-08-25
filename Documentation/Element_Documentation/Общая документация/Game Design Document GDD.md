@@ -40,9 +40,9 @@
 - [[ГОСТ_A.ttf]](files/ГОСТ_A.ttf)
 - [[ГОСТ_B.ttf]](files/ГОСТ_B.ttf)
 
-![[Screen Recording 2025-08-25 125012.mp4]]
+![[Screen Recording 2025-08-25 125012.mp4]](files/Screen Recording 2025-08-25 125012.mp4)
 
-![[Screen Recording 2025-08-25 125816 1.mp4]]
+![[Screen Recording 2025-08-25 125816 1.mp4]](files/Screen Recording 2025-08-25 125816 1.mp4)
 
 
 ---
